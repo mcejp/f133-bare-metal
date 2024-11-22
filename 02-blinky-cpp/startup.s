@@ -21,5 +21,7 @@ _vector:
    
     .org 0x0100
 _start:
+    # stack at end of 64M DDR memory
+    la sp, 0x44000000
     j main
     .end
