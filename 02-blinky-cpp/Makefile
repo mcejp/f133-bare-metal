@@ -13,7 +13,7 @@ clean:
 	rm -rf *.bin *.o *.elf
 
 %.o: %.cpp
-	riscv-none-elf-g++ -c $(ARCHFLAGS) -fno-exceptions -Os -o $@ $<
+	riscv-none-elf-g++ -c $(ARCHFLAGS) -fno-exceptions -fno-rtti -Os -o $@ $<
 	riscv-none-elf-objdump -Drtx $@ >$@.asm
 
 %.o: %.s
