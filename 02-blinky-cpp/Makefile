@@ -1,4 +1,4 @@
-ARCHFLAGS=-march=rv64g -mabi=lp64
+ARCHFLAGS=-march=rv64gc -mabi=lp64
 
 all: startup.o main.o ../main.ld
 	riscv-none-elf-g++ $(ARCHFLAGS) -Wl,-T ../main.ld -o main.elf startup.o main.o -nostartfiles -nostdlib

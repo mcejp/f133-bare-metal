@@ -1,4 +1,4 @@
-ARCHFLAGS=-march=rv64g -mabi=lp64
+ARCHFLAGS=-march=rv64gc -mabi=lp64
 
 all: main.o ../main.ld
 	riscv-none-elf-ld -melf64lriscv -T ../main.ld -o main.elf main.o
