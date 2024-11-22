@@ -1,7 +1,7 @@
 ARCHFLAGS=-march=rv64g -mabi=lp64
 
-all: startup.o main.o
-	riscv-none-elf-g++ $(ARCHFLAGS) -Wl,-T main.ld -o main.elf startup.o main.o -nostartfiles -nostdlib
+all: startup.o main.o ../main.ld
+	riscv-none-elf-g++ $(ARCHFLAGS) -Wl,-T ../main.ld -o main.elf startup.o main.o -nostartfiles -nostdlib
 	riscv-none-elf-objdump -Drtx main.elf >main.asm
 	riscv-none-elf-objcopy -O binary main.elf tmp.bin
 	python3 ../gen_checksum.py tmp.bin main.bin

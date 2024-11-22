@@ -1,7 +1,7 @@
 ARCHFLAGS=-march=rv64g -mabi=lp64
 
-all: main.o main.ld
-	riscv-none-elf-ld -melf64lriscv -T main.ld -o main.elf main.o
+all: main.o ../main.ld
+	riscv-none-elf-ld -melf64lriscv -T ../main.ld -o main.elf main.o
 	riscv-none-elf-objcopy -O binary main.elf tmp.bin
 	python3 ../gen_checksum.py tmp.bin main.bin
 

@@ -1,18 +1,4 @@
-#include <cstdint>
-
-// TODO: already out there?
-#define GPIO_BASE 0x02000000
-// #define PD_CFG2   0x0098
-// #define PD_DAT    0x00a0
-
-struct GPIO_hw {
-    volatile uint32_t unused_0[0x98/4];
-    volatile uint32_t pd_cfg2;
-    volatile uint32_t unused_009c;
-    volatile uint32_t pd_dat;
-};
-
-#define GPIO ((struct GPIO_hw*) GPIO_BASE)
+#include "../f133-hw.h"
 
 int main()
 {
