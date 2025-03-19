@@ -13,6 +13,13 @@
 #define CCU_UART_BGR_REG_UART0_GATING (1<<0)
 #define CCU_UART_BGR_REG_UART0_RST (1<<16)
 
+#define TVE_000_CLOCK_GATE_DIS (1<<0)
+#define TVE_000_TVE_EN (1<<31)
+
+#define TVE_004_COLOR_BAR_MODE (1<<8)
+#define TVE_004_COLOR_BAR_TYPE (1<<9)
+#define TVE_004_CVBS_EN (1<<16)
+
 #define UART_USR_TFNF (1<<1)
 
 struct CCU_hw {

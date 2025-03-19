@@ -143,8 +143,9 @@ int main()
     TVE_TOP.dac_cfg[0] |= (1<<0);
     // TODO: TVE_DAC_CFG1/2 ?
 
-    TVE.tve_000_reg = 0x8000'0001;
-    TVE.tve_004_reg = 0x0001'0100;      // enable color bars
+    TVE.tve_000_reg = TVE_000_TVE_EN | TVE_000_CLOCK_GATE_DIS;
+    // enable color bars
+    TVE.tve_004_reg = TVE_004_CVBS_EN | TVE_004_COLOR_BAR_MODE | TVE_004_COLOR_BAR_TYPE;
     uart_putstr(UART3, "done.\n");
 
     for (;;) {
